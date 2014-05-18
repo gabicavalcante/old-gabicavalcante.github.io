@@ -17,19 +17,18 @@ title: About
     <a id="btnPT" class="pagination-item newer"> Pt </a>
 </div>
 
-<script>
-    jQuery(document).ready(
-        function() {
-            jQuery("#btnEN").toggle(
-                function() {
-                    jQuery("div#en").slideDown(); // slideDown() na div #form-oculto
-                    //jQuery("#botaoExibir").find('div').addClass('active'); // altera para botão esconder
-                } 
-            );
-            jQuery("#btnPT").toggle( 
-                function() {
-                    jQuery("div#pt").slideUp(); // slideUp()na div #form-oculto
-                    //jQuery("#botaoExibir").find('div').removeClass('active'); //retorna para botão exibir
-                } 
-            );
-        }); 
+<script type="text/javascript"> 
+    $(document).ready(function()
+        {  
+            en.style.display = 'block'; 
+            pt.style.display = 'none';
+            $("#btnEN").click(function() {
+                $("#pt").hide();
+                $("#en").show();
+            }); 
+            $("#btnPT").click(function() {
+                $("#en").hide();
+                $("#pt").show();
+            }); 
+        });      
+</script>
