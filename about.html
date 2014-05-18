@@ -13,17 +13,23 @@ title: About
 </div>
 
 <div class="pagination">
-    <a class="pagination-item older"> En </a>
-    <a class="pagination-item newer"> Pt </a>
+    <a id="btnEN" class="pagination-item older"> En </a>
+    <a id="btnPT" class="pagination-item newer"> Pt </a>
 </div>
 
-<script>  
-    function showElement() {  
-        document.getElementById("en").style.display = "block";  
-    }  
-    function hideElement() {  
-        document.getElementById("pt").style.display = "none";  
-    }  
-    document.getElementById("en").addEventListener("mouseover", showElement, false);  
-    document.getElementById("pt").addEventListener("mouseout", hideElement, false);  
-</script> 
+<script>
+    jQuery(document).ready(
+        function() {
+            jQuery("#btnEN").toggle(
+                function() {
+                    jQuery("div#en").slideDown(); // slideDown() na div #form-oculto
+                    //jQuery("#botaoExibir").find('div').addClass('active'); // altera para botão esconder
+                } 
+            );
+            jQuery("#btnEN").toggle( 
+                function() {
+                    jQuery("div#pt").slideUp(); // slideUp()na div #form-oculto
+                    //jQuery("#botaoExibir").find('div').removeClass('active'); //retorna para botão exibir
+                } 
+            );
+        }); 
