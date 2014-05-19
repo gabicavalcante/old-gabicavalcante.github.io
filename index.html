@@ -3,36 +3,37 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<section class="archive">
+{% for post in site.posts %}
+{% unless post.next %}
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+{% unless forloop.first %}</div></div>{% endunless %}
 
-    {{ post.excerpt }}
-  </div>
-  {% endfor %}
-</div>
+  <div class="bundle row gutters fadeInDown animated">
+    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
+    <div class="posts-by-year col span_10">
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Antigos</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="/">Mais recentes</a>
-    {% else %}
-      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Mais recentes</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Mais recentes</span>
-  {% endif %}
-</div>
+{% else %}
+{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+{% if year != nyear %}
 
+{% unless forloop.first %}</div></div>{% endunless %}
+
+  <div class="bundle row gutters fadeInDown animated">
+    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
+    <div class="posts-by-year col span_10">
+{% endif %}
+{% endunless %}
+
+  <article class="row gutters">
+    <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}" class="col span_8">{{ post.title }}</a>
+    <div class="post-date col span_4">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B" }}</time>
+    </div>
+  </article>
+
+{% if forloop.last %}</div></div>{% endif %}
+
+{% endfor %}
+</section>

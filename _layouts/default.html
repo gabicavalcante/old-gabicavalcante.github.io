@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-
-  {% include head.html %}
-
+<html>
+  <head>
+    {% include head.html %}
+  </head>
   <body>
-
-    {% include sidebar.html %}
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
+    <div class="container azul">
+      <header class="top row gutters{% if page.title == "Home" %} fadeInLeft animated{% endif %}">
+        <div class="col span_2 center">
+          <!-- TODO: add baseurl to the logo link -->
+          <a href="{{ site.url }}" id="logo" title="{{ site.data.brume.name }}"
+             style="background-image: url({{site.baseurl}}/public/images/logo.png);"></a>
         </div>
-      </div>
+        {% include navigation.html %}
+      </header>
 
-      <div class="container content">
-        {{ content }}
-      </div>
+      {{ content }}
+
+      <footer>
+        <p>
+          This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/deed.en_US">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+        </p>
+      </footer>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
+    <!-- scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{site.baseurl}}/public/js/jquery.fitvids.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("article").fitVids();
+      });
+    </script>
   </body>
 </html>

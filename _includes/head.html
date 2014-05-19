@@ -1,28 +1,31 @@
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- meta information -->
+<meta charset="utf-8">
+<meta name="description" {% if page.title == "Home" %}
+      content="{{ site.data.brume.description }}" {% else %}
+      content="{{ page.content | strip_html | strip_newlines | truncate: 120 }}" {% endif %}>
+<meta name="author" content="{{ site.data.brume.author }}">
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>
-    {% if page.title == "Home" %}
-      {{ site.title }} &middot; {{ site.tagline }}
-    {% else %}
-      {{ page.title }} &middot; {{ site.title }}
-    {% endif %}
-  </title>
+<!-- title -->
+<title>{{ page.title }} &middot; {{ site.data.brume.name }}</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/lanyon.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<!-- icons -->
+<link rel="shortcut icon" href="{{site.baseurl}}/public/images/favicon.ico" />
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/public/favicon.ico">
+<!-- stylesheets -->
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/responsive.gs.12col.css">
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/animate.min.css">
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/main.css">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-</head>
+<!-- Google fonts -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic&subset=latin-ext">
+
+{% if site.paginate %}
+<!-- font Awesome -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+{% endif %}
+
+<!-- feed links -->
+<link rel="alternate" href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" title="{{ site.name }}">
