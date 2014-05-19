@@ -1,7 +1,2 @@
 _site
-.coffeehintrc
-.jshintrc
-img/Thumbs.db
-.DS_Store
-node_modules
-.sass-cache
+*~

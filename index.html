@@ -1,39 +1,29 @@
 ---
 layout: default
-title: Home
 ---
 
-<section class="archive">
-{% for post in site.posts %}
-{% unless post.next %}
+  <div class ="container">
 
-{% unless forloop.first %}</div></div>{% endunless %}
+  </div>
 
-  <div class="bundle row gutters fadeInDown animated">
-    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
-    <div class="posts-by-year col span_10">
+  <div class="recent-posts">
+  <h1>Recent Posts</h1>
 
-{% else %}
-{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-{% if year != nyear %}
+    <ul class="homepage-posts most-recent">
+    <li><span><h4><a href="{{ site.baseurl }}/jekyll/testing/2013/12/08/What-is-this-anyway.html">What is this, anyway?</a>&nbsp;<span class="badge"><smaller>FRESH</smaller></span><time class="pull-right">08 Dec 2013</h4></time></span></h4></span></li>
+    </ul>
 
-{% unless forloop.first %}</div></div>{% endunless %}
 
-  <div class="bundle row gutters fadeInDown animated">
-    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
-    <div class="posts-by-year col span_10">
-{% endif %}
-{% endunless %}
+    <ul class="homepage-posts">
+ 	  <li><span><h4><a href="{{ site.baseurl }}/2013/12/04/Samples.html">Samples</a><time class="pull-right">04 Dec 2013</h4></time></span></h4></span></li>
+    </ul>
 
-  <article class="row gutters">
-    <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}" class="col span_8">{{ post.title }}</a>
-    <div class="post-date col span_4">
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B" }}</time>
-    </div>
-  </article>
+    <ul class="homepage-posts">
+ 	  <li><span><h4><a href="{{ site.baseurl }}/jekyll/update/2013/11/08/welcome-to-jekyll.html">Welcome to Jekyll!</a><time class="pull-right">08 Nov 2013</h4></time></span></h4></span></li>
+    </ul>
 
-{% if forloop.last %}</div></div>{% endif %}
+    <ul>
+      <a href="{{ site.baseurl }}/list.html">View More...</a>
+</ul>
+  	</div>
 
-{% endfor %}
-</section>
