@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 _site
+=======
+_site
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+codekit-config.json
+node_modules
+>>>>>>> cf88cd126f5e5376048a262514b0605817d5b81e
