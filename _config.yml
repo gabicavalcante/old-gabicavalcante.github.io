@@ -21,9 +21,10 @@ owner:
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
   google_plus:   
-  safe: true
-  lsi: false
-  source: 	  i-am-gabi.github.io
+  safe: 	  true
+  lsi: 		  false
+  source: 	  _source
+  destination:    _deploy
 
 # Background image to be tiled on all pages
 background: 
