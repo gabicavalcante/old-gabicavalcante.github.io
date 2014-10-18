@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>/Notepad</loc>
+    </url>
+    
+    
+    <url>
+        <loc>/Notepad/blog/404.html</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/404.html</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/blog/about.html</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/about/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/blog/atom.xml</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/categories/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/featured/</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/feed.xml</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/blog/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/index.html</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/links.jsonp</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/search.json</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/sitemap.xml</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/tags/index.html</loc>
+    </url>
+    
+
+    
+    <url>
+        <loc>/Notepad/notepad/webdevelopment/why-jekyll</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/personal/introducing-notepad</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/theme/documentation</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/blog/tenha-seu-pr-prio-blog</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/blog/hello-world</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/theme/readability-feature-post</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/articles/readability-post</loc>
+    </url>
+    
+    <url>
+        <loc>/Notepad/notepad/articles/theme-elements</loc>
+    </url>
+    
+</urlset>
