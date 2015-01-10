@@ -16,15 +16,15 @@ shorturl:         i-am-gabi.github.io
 
 author:
   name:           'Gabriela Cavalcante'
-  url:            https://twitter.com/joshualande
+  url:            https://twitter.com/_gabiCavalcante
 
 paginate:         1
 
 # Custom vars
 version:          1.0.0
 
-github:
-  repo:           github.com/joshualande/joshualande.github.io
+github:			  https://github.com/I-am-Gabi/
+  repo:           https://github.com/I-am-Gabi/i-am-gabi.github.io
 
 # This is the list of pages to include in the header of the website.
 pages_list:       
