@@ -1,19 +1,37 @@
+# Dependencies
+markdown:         redcarpet
+redcarpet:
+  extensions: ["tables"]
+
+pygments:         true
+
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
-title:            Poole
-tagline:          The Jekyll Butler
-url:              http://getpoole.com
-paginate:         1
-baseurl:          /
+title:            Gabriela Cavalcante
+tagline:          
+url:              http://www.i-am-gabi.github.io
+shorturl:         i-am-gabi.github.io
+
 author:
-  name:           Mark Otto
-  url:            https://twitter.com/mdo
-  email:          markdotto@gmail.com
+  name:           'Gabriela Cavalcante'
+  url:            https://twitter.com/joshualande
+
+paginate:         1
 
 # Custom vars
 version:          1.0.0
+
 github:
-  repo:           https://github.com/poole/poole
+  repo:           github.com/joshualande/joshualande.github.io
+
+# This is the list of pages to include in the header of the website.
+pages_list:       
+  About: '/about/'
+  Posts: '/archive/'
+
+# Allow URL Redirects: 
+#  * https://help.github.com/articles/redirects-on-github-pages
+gems:
+  - jekyll-redirect-from

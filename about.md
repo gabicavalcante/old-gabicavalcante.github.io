@@ -3,28 +3,11 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+Sou estudante do Curso de Ciência da Computação na Universidade Federal do 
+Rio Grande do Norte (UFRN), e conclui o técnico em informático pelo IFRN em 2013. Atualmente trabalho na base de pesquisa da universidade, desenvolvendo
+uma ferramente de seleção automática de alternativas com multicritérios.
 
-In the novel, *The Strange Case of Dr. Jekyll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+Antes de trabalhar como pesquisadora, trabalhei na equipe de TI da [Anchor Loans](http://www.anchorloans.com/). Lá, usei o framework Pyramid e entrei em contato pela primeira vez com banco nosql MongoDB. Já trabalhei com C#, Ruby e Java, e com SQL Server e MySQL. 
 
-There are currently two themes built on Poole:
+Atualmente participo da comunidade [PyLadies Brasil](http://www.brasil.pyladies.com). Está sendo uma experiência incrível ajudar a organizar a comunidade aqui e principalmente estar participado do início dela no país. Os frutos do nosso trabalho estão sendo recompensadores. 
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
-
-Learn more and contribute on [GitHub](https://github.com/poole).
-
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
