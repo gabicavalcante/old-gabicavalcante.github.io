@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Sobre mim, a vida, o universo e tudo mais
 ---
 
 Sou estudante do Curso de Ciência da Computação na Universidade Federal do 
