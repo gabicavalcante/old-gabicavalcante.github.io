@@ -15,7 +15,7 @@ Nos ultimos tempos, venho percebendo que quanto mais você compartilha, mais voc
 
 Depois de falar, FAÇA. Aceite a vaga de emprego, começe o projeto dos seus sonhos, inicie a mudança na sua vida que a tanto tempo é adiada. Sempre vai existir o ser aleatório que vai dizer que não vai dar certo, ou que esse primeiro passo nem é lá grande coisa. Bem, o primeiro passo é seu ou deles? Então vá em frente. 
 
-Tenho sérias esperanças que esse espaço seja um local para ajudar pessoas que estão dando seus primeiros passos. Então se por um acaso você se esbarrou em um texto, tutorial ou artigo que não ficou claro ou que gerou ainda mais dúvida, mande uma mensagem um [tweet](https://twitter.com/joshualande) ou sinal de fumaça. 
+Tenho sérias esperanças que esse espaço seja um local para ajudar pessoas que estão dando seus primeiros passos. Então se por um acaso você se esbarrou em um texto, tutorial ou artigo que não ficou claro ou que gerou ainda mais dúvida, mande uma mensagem um [tweet](https://twitter.com/joshualande) ou sinal de fumaça. Estarei a disposição.
 
 
 {% include twitter_plug.html %}
