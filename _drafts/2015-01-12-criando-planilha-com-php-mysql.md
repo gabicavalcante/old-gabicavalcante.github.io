@@ -3,6 +3,7 @@ layout: post
 title: Criando planilha com PHP + MySQL
 comments: true
 permalink: "criando-planilha-com-php-mysql"
+autor: Gabriela Cavalcante
 ---
 
 Existem alguns scripts básicos, mas extremamente úteis, que te tiram de certos sufocos. Necessitei de um deles nos últimos dias, e imagino que outras pessoas em algum momento também vão necessitar. Precisei criar um relatório com base em dados existentes em um banco mysql, e pra isso usei o php. Então, aqui vai como fiz...

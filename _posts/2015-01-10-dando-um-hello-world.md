@@ -3,6 +3,7 @@ layout: post
 title: "Dando um 'Hello, World'"
 comments: true
 permalink: "dando-um-hello-world"
+autor: Gabriela Cavalcante
 ---
 
 *Cuidado, Hello World dá azar.* Aleatória, Pessoa. 
