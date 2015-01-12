@@ -10,6 +10,8 @@ permalink:        pretty
 
 # Setup
 title:            Gabriela Cavalcante
+description:      Um diário de Bordo. 
+disqus_shortname: gabicavalcante
 tagline:          
 url:              http://www.i-am-gabi.github.io
 shorturl:         i-am-gabi.github.io
