@@ -4,6 +4,7 @@ title: "Dando um 'Hello, World'"
 comments: true
 permalink: "dando-um-hello-world"
 author: Gabriela Cavalcante
+tags: [outros]
 ---
 
 *Cuidado, Hello World dá azar.* Aleatória, Pessoa. 

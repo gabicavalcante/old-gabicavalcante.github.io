@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Gabriela Cavalcante</title>
+ <link href="http://www.i-am-gabi.github.io/atom.xml" rel="self"/>
+ <link href="http://www.i-am-gabi.github.io/"/>
+ <updated>2015-01-12T12:29:46-03:00</updated>
+ <id>http://www.i-am-gabi.github.io</id>
+ <author>
+   <name>Gabriela Cavalcante</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Criando planilha com PHP + MySQL</title>
+   <link href="http://www.i-am-gabi.github.io/criando-planilha-com-php-mysql"/>
+   <updated>2015-01-12T00:00:00-03:00</updated>
+   <id>http://www.i-am-gabi.github.io/criando-planilha-com-php-mysql</id>
+   <content type="html">&lt;p&gt;Existem alguns scripts básicos, mas extremamente úteis, que te tiram de certos sufocos. Necessitei de um deles nos últimos dias, e imagino que outras pessoas em algum momento também vão necessitar. Precisei criar um relatório com base em dados existentes em um banco mysql, e pra isso usei o php. Então, aqui vai como fiz...&lt;/p&gt;
+
+&lt;p&gt;É importante que inicialmente exista a conexão com o banco de dados e a seleção dos dados que serão colocados no relatório gerado. Em uma situação em que, por exemplo, seu banco guarda os dados de inscritos e seu relatório precisa conter essas informações, nós podemos ter:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;    
+
+&lt;span class=&quot;c1&quot;&gt;// Dados do banco de dados&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;host&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;       
+&lt;span class=&quot;nv&quot;&gt;$banco&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;evento&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// nome do banco     &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$usuario&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// seu usuário      &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$senha&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// senha do banco&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$tabela&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;inscritos&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// tabela &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$campos&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;nome, cpf, modo_pg, data_inscricao&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// campos da tabela              &lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Abrindo conexão    &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$conexao&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$usuario&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$senha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+
+&lt;span class=&quot;nb&quot;&gt;mysql_select_db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$banco&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$conexao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;     
+
+&lt;span class=&quot;c1&quot;&gt;// Seleção de dados para o relatório &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;SELECT &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$campos&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; FROM &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$tabela&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;c1&quot;&gt;// Executando a query SQL no banco de dados            &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$conexao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+&lt;span class=&quot;c1&quot;&gt;// Transformando os dados em um array&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$inscritos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_fetch_assoc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Calculando quantos dados retornaram   &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$rows_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_num_rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Agora você pode iniciar a criação da tabela, começando pelo cabeçalho:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;table border=&amp;quot;1&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;tr&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;b&amp;gt;NOME&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;b&amp;gt;CPF&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;b&amp;gt;MODO DE PAGAMENTO&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;lt;b&amp;gt;DATA&amp;lt;/b&amp;gt;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/tr&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O restante do relatório consiste no conteúdo dos inscritos, então o laço responsável por capturar essas informações e representar na tabela fica da seguinte forma:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
+&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+
+&lt;span class=&quot;c1&quot;&gt;// dados dos inscritos  &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$nome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$inscritos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;nome&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cpf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$inscritos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;cpf&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;$modo_pg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$inscritos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;modo_pg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;  
+&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$inscritos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;data_notificacao&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;  
+
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;tr&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;c1&quot;&gt;// representando os dados de cada inscrito&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$nome&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cpf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$modo_pg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;td align=&amp;quot;center&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/td&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/tr&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$inscritos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_fetch_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// retorna a linha de consulta até que a condição seja falsa. &lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Por fim, definimos o nome do arquivo, fechamos nossa tag table, e configuramos o header.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
+&lt;span class=&quot;c1&quot;&gt;// Definimos o nome do arquivo que será exportado  &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$arquivo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;inscritos.xls&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/table&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;c1&quot;&gt;// Configurações header para forçar o download   &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Cache-Control: no-cache, must-revalidate&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+&lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Pragma: no-cache&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+&lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Content-type: application/x-msexcel&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+&lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Content-Disposition: attachment; filename=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$arquivo&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Content-Description: PHP Generated Data&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+
+&lt;span class=&quot;c1&quot;&gt;// Envia o conteúdo do arquivo  &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Pronto... sua tabela estará criada com os dados que tem no banco. Deu para ver que não é nada de outro mundo. Espero ter ajudado. Até mais!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Dando um 'Hello, World'</title>
+   <link href="http://www.i-am-gabi.github.io/dando-um-hello-world"/>
+   <updated>2015-01-10T00:00:00-03:00</updated>
+   <id>http://www.i-am-gabi.github.io/dando-um-hello-world</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;Cuidado, Hello World dá azar.&lt;/em&gt; Aleatória, Pessoa. &lt;/p&gt;
+
+&lt;p&gt;Não preciso dizer quanto dar o primeiro passo pode ser doloroso. A dúvida em aceitar aquela vaga de emprego (que vai mudar sua vida) pode ter te tirado noites de sono. Ou então querer iniciar aquele projeto (que sempre pareceu grande demais para você), pode ter feitos suas dores de cabeça insuportável. Ou até mesmo a possibilidade de uma pequena mudança de vida... como foi ruim o mal estar que ela causou. &lt;/p&gt;
+
+&lt;p&gt;Por essas barreiras que existem simplemente para serem uma pedra no sapato, muitos primeiros passos não são dados. O que é triste. Posso falar isso por experiência própria (tornando tudo ainda mais triste). Então, o quê que a gente pode fazer?&lt;/p&gt;
+
+&lt;p&gt;Nos ultimos tempos, venho percebendo que quanto mais você compartilha, mais você aprende e ajuda. Até mesmo quando você compartilha erros ou problemas. Então, a primeira coisa que digo é, FALE. Exponha o que você conseguiu e não conseguiu fazer. Em algum canto do mundo vai existir alguém que vai crescer com a sua conquista ou que vai te ajudar no seu problema.&lt;/p&gt;
+
+&lt;p&gt;Depois de falar, FAÇA. Aceite a vaga de emprego, começe o projeto dos seus sonhos, inicie a mudança na sua vida que a tanto tempo é adiada. Sempre vai existir o ser aleatório que vai dizer que não vai dar certo, ou que esse primeiro passo nem é lá grande coisa. Bem, o primeiro passo é seu ou deles? Então vá em frente. &lt;/p&gt;
+
+&lt;p&gt;Tenho sérias esperanças que esse espaço seja um local para ajudar pessoas que estão dando seus primeiros passos. Então se por um acaso você se esbarrou em um texto, tutorial ou artigo que não ficou claro ou que gerou ainda mais dúvida, mande uma mensagem um &lt;a href=&quot;https://twitter.com/joshualande&quot;&gt;tweet&lt;/a&gt; ou sinal de fumaça. Estarei a disposição.&lt;/p&gt;
+
+&lt;p&gt;Se você tem qualquer dúvida ou comentários, por favor, coloque-o abaixo. Ou
+&lt;a href=&quot;https://twitter.com/_gabiCavalcante&quot;&gt;
+  Siga-me no Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
