@@ -5,7 +5,7 @@ title: Posts
 
 ----------
 {% for tag in site.tags %} 
-{{ tag[0] | upcase }}
+[ {{ tag[0] | upcase }} ]
 {% for post in site.posts %}
 {% for t in post.tags %} 
 {% if (t == tag[0]) %}
