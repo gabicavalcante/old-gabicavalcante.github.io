@@ -7,11 +7,11 @@ author: Gabriela Cavalcante
 tags: [flask]
 ---
 
-Pode colocar o cronômetro para começar a contar... 5 minutos. Primeiro, esse post não tem como propósito te contar detalhes de como tudo acontece. Existem ótimos materiais e vou referênciá-los a medida que fomos fazendo nosso app. Meu objetivo é mostrar como é simples, e lhe instigar a aprender mais.
+Pode colocar o cronômetro para começar a contar... 5 minutos. Primeiro, esse post não tem como propósito te contar detalhes de como tudo acontece. Existem ótimos materiais e vou referênciá-los a medida que fomos fazendo nossa app. Meu objetivo é mostrar como é simples, e lhe instigar a aprender mais.
 
-Então vamos lá. Nossa app terá uma tela de entrada, nela você digitará um nome para usuário e uma senha. Será encaminhado para uma outra tela, com um formulário de cadastro. Basicamente, faremos uma catálogo de músicas. Depois de "logar" na aplicação, você poderá cadastrar informações de músicas para futuras consultas.
+Então vamos lá. Nossa app será um To Do list básico. Caso você não saiba o que é um To Do list, é basicamente uma lista de coisas para fazer, em que você adiciona uma atividade e remove quando estiver concluida. Então nossa app terá uma tela inicial com uma caixa de texto para você adicionar a task, e uma sessão que mostrará todas as atividades cadastradas, com uma opção para você removê-la.
 
-É sempre importante entender a proposta que o Flask tem. Ele se propõem a oferecer um esqueleto, e te deixa responsável por todo o resto. Para alguns isso pode ser incrível, para outros, assustador. Isso por que o controle do que sua aplicação terá é todo seu. Por exemplo, para o login nós vamos fazer algo simples, bem simples mesmo, mais existem extensões disponíveis que tem o foco totalmente voltado a autenticação com Flask. Elas são completas e muito fáceis de usar, em posts futuros falarem melhor sobre. Mas mesmo com elas disponíveis, nós podemos optar se vamos usar ou não, e qual vamos usar.
+É sempre importante entender a proposta que o Flask tem. Ele se propõem a oferecer um esqueleto, e te deixa responsável por todo o resto. Para alguns isso pode ser incrível, para outros, assustador. Isso por que o controle do que sua aplicação terá é todo seu. 
 
 Maravilha né?! Vamos começar com o básico. Veja o código abaixo:
 
@@ -51,7 +51,7 @@ def index():
 
 ```
 
-A instância da aplicação possui um método que carrega a um web service de desenvolvimento integrado ao Flask. O que acontece nas seguintes linhas: 
+A instância da aplicação possui um método que carrega um web service de desenvolvimento integrado ao Flask. O que acontece nas seguintes linhas: 
 
 ```python 
 
@@ -60,9 +60,9 @@ if __name__ == '__main__':
 
 ```
 
-Quando fazemos <code> __name__ == '__main__' </code> estamos verificando se esse script está sendo executado diretaente. Se ele estiver sendo importado por outro arquivo, o resultado será ```False```. 
+Quando fazemos <code> __name__ == '__main__' </code> estamos verificando se esse script está sendo executado diretamente. Se ele estiver sendo importado por outro arquivo, o resultado será ```False```. 
 
-Quantos segundos se passaram? Vamos lá... Agora vamos passar para os Templates. É claro que na sua aplicação você não vai construir as página como no exemplo citado inicialmente. O que vamos fazer é criar templates e usar view function para renderizá-los. Por padrão, os templates no Flask devem ser armazenados em um diretório dentro da sua aplicação chamado <i>templates</i>. No nosso arquivo ```app.py``` faremos a seguinte modificação:
+Vamos lá... Agora vamos passar para os Templates. É claro que na sua aplicação você não vai construir as página como no exemplo citado inicialmente. O que vamos fazer é criar templates e usar view function para renderizá-los. Por padrão, os templates no Flask devem ser armazenados em um diretório dentro da sua aplicação chamado <i>templates</i>. No nosso arquivo ```app.py``` faremos a seguinte modificação:
 
 ```python
 
@@ -77,4 +77,5 @@ if __name__ == '__main__':
 	app.run(debug=True)
 
 ```
+
 
