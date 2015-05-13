@@ -3,7 +3,7 @@ layout: post
 title: Criando planilha com PHP + MySQL
 comments: true
 permalink: "criando-planilha-com-php-mysql"
-autor: Gabriela Cavalcante
+author: Gabriela Cavalcante
 tags: [php, mysql]
 ---
 
