@@ -4,7 +4,7 @@ title: Usando OpenCV no Galileo
 comments: true
 permalink: "usando-opencv"
 autor: Gabriela Cavalcante
-tags: [galileo, opencv]
+tags: [galileo]
 ---
 
 Algo que eu passei os ultimos dias tentando fazer, foi conectar uma câmera no Galileo e capturar imagens por ela. Caso você também queira fazer isso, vamos aqui começar o passo a passo. Conecte a câmera USB na saida USB do Galileo, você pode verificar se foi conectado vendo se o dispositivo aparece em ```/dev```. 
@@ -68,3 +68,5 @@ Você deve querer ver a imagem, correto? Você pode mandá-la para seu computado
 $ scp <caminho da imagem>/opencv_image.png <seu user>@<ip da sua maquina>:/<pasta de destino>/
 
 ```
+
+Um outro arquivo que você pode dar uma olhada: [Internet Of Things](http://intel-software-academic-program.com/courses/diy/Intel_Academic_-_DIY_-_InternetOfThings/IntelAcademic_IoT_08_OpenCV.pdf).
