@@ -3,7 +3,7 @@ layout: post
 title: Usando OpenCV no Galileo
 comments: true
 permalink: "usando-opencv"
-autor: Gabriela Cavalcante
+author: Gabriela Cavalcante
 tags: [galileo]
 ---
 
