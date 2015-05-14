@@ -7,9 +7,9 @@ author: Gabriela Cavalcante
 tags: [galileo]
 ---
 
-Esse é um ponto muito importante quando você começa a mexer no Galileo. Existem alguns tutorias, em sua grande maioria para quem possui Windows. Aqui vai um tutorial feito com a ajuda do professor [Diomadson](https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2140683), do Instituto Metrópole Digital (UFRN).
+Esse é um ponto muito importante quando você começa a mexer no Galileo. Existem alguns tutorias disponíveis, em sua grande maioria para quem possui Windows, mas todos parecem deixar de mostrar alguma informação que no fim, impede que tudo ocorra corretamente. Aqui vai um tutorial feito com a ajuda do professor [Diomadson](https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2140683), do Instituto Metrópole Digital (UFRN).
 
-Antes de tudo, ligue seu Galileo, conecte o cabo usb client do seu computador para a placa, conecte o cabe ethernet na placa e em seu pc. O código que vamos mostrar pode ser executador por meio da IDE do Arduino adaptada para o Galileo. Você vai perceber que quando rodar, o serial monitor vai aguardar que você digite algum parâmetro, isso acontece por que o código  tem um conjunto de opções:
+Antes de tudo, ligue seu Galileo, conecte o cabo usb client do seu computador para a placa, conecte um cabo ethernet na placa e em seu pc. O código que vamos mostrar pode ser executador por meio da IDE do Arduino adaptada para o Galileo. Você vai perceber que quando rodar o código, o Serial Monitor vai aguardar que você digite algum parâmetro. Isso acontece por que o código tem um conjunto de opções:
 
 > i - mostra as informações da CPU (do galileo)
 
@@ -23,7 +23,7 @@ Antes de tudo, ligue seu Galileo, conecte o cabo usb client do seu computador pa
 
 > d - configura um ip fixo (192.168.0.253) e inicia um servidor DHCP (isso deve resolver o problema de conectividade no Linux e fazer a conexao no Windows mais rapida, uma vez que ele não espera a resposta)
 
-Aqui tem um exemplo do ip que ele deu pra minha maquina (ligada diretamente na ethernet):
+Dependendo da opção que você digite, ele vai mostrar uma determinada informação. Aqui tem um exemplo do ip que ele deu pra minha maquina (ligada diretamente na ethernet):
 
 ```
 $ user@pc:~/galileo$ sudo dhclient -v eth0 
@@ -52,11 +52,13 @@ Outros exemplos de saida:
        valid_lft forever preferred_lft forever
 2: enp0s20f6: <BROADCAST,MULTICAST,UP,LOWER_UP8000> mtu 1500 qdisc pfifo_fast qlen 1000
     link/ether 98:4f:ee:01:e6:28 brd ff:ff:ff:ff:ff:ff
-    inet 10.7.14.246/22 brd 10.7.15.255 scope global enp0s20f6    <---- Ip que ele recebeu da rede do IMD
+    inet 10.7.14.246/22 brd 10.7.15.255 scope global enp0s20f6  
     inet6 fe80::9a4f:eeff:fe01:e628/64 scope link 
        valid_lft forever preferred_lft forever
+```
+Na linha ```inet 10.7.14.246/22 brd 10.7.15.255 scope global enp0s20f6``` você pode ver o IP que o Galileo recebeu da rede.
 
-
+```bash
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -65,10 +67,12 @@ Outros exemplos de saida:
 2: enp0s20f6: <BROADCAST,MULTICAST,UP,LOWER_UP8000> mtu 1500 qdisc pfifo_fast qlen 1000
     link/ether 98:4f:ee:01:e6:28 brd ff:ff:ff:ff:ff:ff
     inet 10.7.14.246/22 brd 10.7.15.255 scope global enp0s20f6
-    inet 192.168.0.253/24 scope global enp0s20f6             <---- Ip que foi adionado com o comando 's'. Podem perceber o que o IP da rede do IMD continua la
-    inet6 fe80::9a4f:eeff:fe01:e628/64 scope link 
-       valid_lft forever preferred_lft forever
+    inet 192.168.0.253/24 scope global enp0s20f6  
+    inet6 fe80::9a4f:eeff:fe01:e628/64 scope link  
+       valid_lft forever preferred_lft forever     
 ```
+Nessa outra saida, na linha ```inet 192.168.0.253/24 scope global enp0s20f6``` você vê o IP que foi adionado com o comando 's'. Pode perceber o que o IP da rede em que você está conectado continua lá.
+
 
 O código a seguir captura essas informações:
 
@@ -100,7 +104,6 @@ void loop() {
       system("ip addr add 192.168.0.253/24 dev enp0s20f6");
       system("dhcp-server-test 2 & >/dev/null");
       break;
-
     default:
       break;
   }

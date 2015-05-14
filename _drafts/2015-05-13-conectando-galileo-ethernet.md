@@ -52,7 +52,7 @@ Outros exemplos de saida:
        valid_lft forever preferred_lft forever
 2: enp0s20f6: <BROADCAST,MULTICAST,UP,LOWER_UP8000> mtu 1500 qdisc pfifo_fast qlen 1000
     link/ether 98:4f:ee:01:e6:28 brd ff:ff:ff:ff:ff:ff
-    inet 10.7.14.246/22 brd 10.7.15.255 scope global enp0s20f6    <---- Ip que ele recebeu da rede do IMD
+    inet 10.7.14.246/22 brd 10.7.15.255 scope global enp0s20f6 <- Ip que ele recebeu da rede  
     inet6 fe80::9a4f:eeff:fe01:e628/64 scope link 
        valid_lft forever preferred_lft forever
 
