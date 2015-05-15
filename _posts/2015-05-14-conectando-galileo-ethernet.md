@@ -13,11 +13,11 @@ Vamos começar pela imagem. Encontrei duas opções disponíveis, a [SD-Card Lin
 
 Depois dos problemas que tive, cheguei a conclusão que essa primeira imagem parecia ser mais simples, com os recursos básicos, algo enxuto... para acender e apagar um led, tive que usar escrita de arquivo. Foi então que testei a segunda imagem. Quando você baixá-la, caso esteja no Windows, pode usar o [Win32DiskImager](http://sourceforge.net/projects/win32diskimager/), no Linux, pode usar esse comando ```$ dd if=/caminho/da/imagem of=/dev/mmc```. Ele irá criar a imagem no SD Card, e duas partições serão reconhecidas quando você inserir o cartão com a imagem no pc. <explicar o pq dessas partições>
 
-No fim, sugiro a segunda imagem. Ela facilitará nos próximos passos. Agora você precisa pegar o IP que é dado para a placa quando você conecta o cabo ethernet e acessar, já que pelo comando que citei anteriormente, não é possível pegar essas informações. Aqui vai um tutorial feito com a ajuda do professor [Diomadson](https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2140683), do Instituto Metrópole Digital (UFRN) para facilitar o processo de conexão com a placa.
+No fim, sugiro a segunda imagem. Ela facilitará nos próximos passos. Agora você precisa pegar o IP que é dado para a placa quando você conecta o cabo ethernet e acessar, já que pelo comando que citei anteriormente, não é possível pegar essas informações. Aqui vai um tutorial feito pelo professor [Diomadson](https://sigaa.ufrn.br/sigaa/public/docente/portal.jsf?siape=2140683), do Instituto Metrópole Digital (UFRN) para facilitar o processo de conexão com a placa.
 
-Antes de tudo, ligue seu Galileo, conecte o cabo usb client do seu computador para a placa, conecte um cabo ethernet na placa e em seu pc. O código que vamos mostrar pode ser executador por meio da IDE do Arduino. Você vai perceber que quando rodar o código, o Serial Monitor vai aguardar que você digite algum parâmetro. Isso acontece por que o código tem um conjunto de opções:
+Antes de tudo, ligue seu Galileo, conecte o cabo usb client do seu computador para a placa, conecte um cabo ethernet na placa e um em seu pc. O código que vamos mostrar pode ser executador por meio da IDE do Arduino. Você vai perceber que quando rodar o código, o Serial Monitor vai aguardar que você digite algum parâmetro. Isso acontece por que o código tem um conjunto de opções:
 
-> i - mostra as informações da CPU (do galileo)
+> i - mostra as informações da CPU (do Galileo)
 
 > s - configura um ip fixo (192.168.0.253)
 
@@ -29,7 +29,7 @@ Antes de tudo, ligue seu Galileo, conecte o cabo usb client do seu computador pa
 
 > d - configura um ip fixo (192.168.0.253) e inicia um servidor DHCP (isso deve resolver o problema de conectividade no Linux e fazer a conexao no Windows mais rapida, uma vez que ele não espera a resposta)
 
-Dependendo da opção que você digite, ele vai mostrar uma determinada informação. Aqui tem um exemplo do ip que ele deu pra minha maquina (ligada diretamente na ethernet):
+Dependendo da opção que você digite, ele vai mostrar uma determinada informação. Aqui tem um exemplo do ip que ele deu para a maquina (ligada diretamente na ethernet):
 
 ```
 $ user@pc:~/galileo$ sudo dhclient -v eth0 
