@@ -14,8 +14,7 @@ Caso você não tenho o OpenCV instalado (opkg list-installed | grep python-open
 
 ```bash
 $ cat > /etc/opkg/iot-devkit.conf <<EOF
-> src iot-devkit-i586 http://iotdk.intel.com/repos/1.1/iotdk/i586
-> src mraa-upm http://iotdk.intel.com/repos/1.1/intelgalactic
+> src iot-devkit-i586 http://iotdk.intel.com/repos/1.1/iotdk/i586 
 > EOF
 
 $ opkg update
