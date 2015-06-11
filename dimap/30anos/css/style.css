@@ -1162,10 +1162,12 @@
 	{
 		position: relative;
 		margin: 0;
-		background: url('../images/header.jpg');
+		background-image: url('../images/home.jpg');
+		opacity: 0.5;
+    	filter: alpha(opacity=40); 
 		background-size: cover;
 		background-position: center center;
-		padding: 14em 0 14em 0;
+		padding: 6em 0 10em 0;
 		text-align: center;
 		color: #fff;
 	}
@@ -1196,9 +1198,11 @@
 		
 			#header header h1
 			{
-				font-size: 2.25em;
+				font-size: 7.25em;
 				line-height: 1.25em;
 				margin-bottom: 0;
+				color: #fff;
+				font-family: "Roboto Condensed", serif;
 			}
 			
 			#header header p
@@ -1208,6 +1212,8 @@
 				padding: 0;
 				font-size: 1.25em;
 				line-height: 1.5em;
+				color: #fff;
+				font-family: "Roboto Condensed", serif;
 			}
 			
 		#header footer
