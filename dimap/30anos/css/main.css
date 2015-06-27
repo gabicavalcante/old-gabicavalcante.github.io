@@ -380,7 +380,32 @@ a:hover {
     margin: 15px 0; }
   .location .link {
     color: #fff;
-    font-family: "Panton Light"; }
+    font-family: "Panton Light"; 
+}
+
+.submissao .sec-left, {
+  float: left;
+  width: 50%; 
+  text-align: justify;
+} 
+.submissao .sec-right {
+  margin-left: 55%;
+  text-align: justify;
+}
+.submissao:after {
+    content: "";
+    display: table;
+    clear: both; 
+}  
+@media (max-width: 479px) {
+  .submissao .sec-left, .submissao .sec-right {
+    width: 100%;
+    margin: 0; 
+  }
+  .submissao {
+    margin-top: 4em; 
+  } 
+}
 
 .schedule {
   padding: 4em 0; }

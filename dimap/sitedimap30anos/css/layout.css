@@ -1,0 +1,293 @@
+
+@font-face {
+    font-family: 'NewGothR'; /*a name to be used later*/
+    src: url('fonts/tt0047m_.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'NewGothB'; /*a name to be used later*/
+    src: url('fonts/tt0049m_.ttf'); /*URL to font*/
+}
+
+html,body { 
+    background: url('img/background_pattern.png') ;
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+.nav > li > a {
+    padding: 10px 1px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: none;
+    background-color: #519be5;
+    color: #000000;
+    height: 58px;
+}
+
+.navbar-fixed-top {
+    top: 0px;
+    border-width: 0px 0px 0px;
+    margin-bottom:0px;
+    background-color:#7997FF;
+    min-height: 40px;
+}
+
+.navbar > .navbar-default > .navbar-fixed-top {
+  padding-right:0px;
+  padding-left:0px;
+  background-color:#7997FF;
+}
+
+
+/* Links */
+
+
+.text h1{
+   text-align: left;
+   font:26px 'NewGothR';
+   font-weight: bold;
+   text-transform: uppercase;
+   color:#254896;
+}
+
+.text h2{
+
+
+   text-align: left;
+   font:20px 'NewGothR';
+   color:#000;
+
+
+}
+
+
+
+iframe{
+  border:0;
+  margin-left:auto;
+  margin-right:auto;
+  display: block;
+}
+
+p{
+   text-align: justify;
+   font:16px 'NewGothR';
+   
+  
+
+}
+
+.text{
+    padding-top: 30px;
+    margin-right: auto ;
+    margin-left: auto;
+    padding-bottom: 60px;
+}   
+
+#cardboard{
+   margin-top: 15px;
+   background: #fff;
+   margin-right: auto;
+   margin-left: auto;
+   display: block;
+   padding-bottom:60px;
+
+   
+}
+
+/* hide toggle button */
+
+.banner img{
+   
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 70px;
+   
+   
+
+}
+
+
+
+#comites h1{
+   text-align: left;
+   font:26px 'NewGothR'; 
+   font-weight: bold;
+   text-transform: uppercase;
+   color:#254896;
+   margin-left: 20px;
+}
+#comites h2{
+    text-align: center;
+   font:22px 'NewGothR'; 
+   text-transform: uppercase;
+   font-weight: bold;
+   color:#000;
+}
+#comites h3{
+    text-align: center;
+   font:20px 'NewGothR'; 
+   font-weight: bold;
+   color:#254896;
+}
+
+.text-comites{
+  
+    padding-top: 30px;
+    margin-right: 40px;
+    margin-left: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+
+#text-submissao a{
+  font:16px 'NewGothR';
+  font-weight: bold;
+  display: inline-block;
+  color: #254896;
+
+}
+
+#links{
+  text-align: center;
+}
+
+#text-chamada a{
+
+  font:20px 'NewGothR';
+  font-weight: bold;
+  display: inline-block;
+  color: #254896;
+}
+
+#text-inscricao p{
+
+   text-align: justify;
+   font:20px 'NewGothR';
+   display: inline;
+   margin-left: 40px;
+}
+
+#text-programacao p{
+
+  text-align: justify;
+   font:20px 'NewGothR';
+   display: inline;
+   margin-left: 40px;
+   
+}
+
+footer{
+  background-color: #519be5;
+  width: 100%;
+  display: block;
+  position:absolute;
+  bottom:0;
+  left:0;
+  text-align: center;
+}
+
+footer h3{
+  font: 16px 'NewGothR';
+  color: #fff;
+  display: inline-block;
+  margin-top: 15px;
+}
+footer h4{
+  font: 18px 'NewGothB';
+  color: #fff;
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: underline;
+}
+
+
+#wrapper{
+  min-height:100%;
+  position:relative;
+}
+
+
+
+#text-infos ul{
+  float:center;
+}
+
+#text-infos li{
+  font: 20px 'NewGothR';
+  color: #000;
+  
+
+}
+
+
+
+#text-chamada p,#text-chamada li{
+  text-align: justify;
+   font:16px 'NewGothR';
+  display: block;
+   
+}
+
+#text-chamada ul{
+  list-style-type: circle;
+  color: #000;
+}
+
+#text-chamada  a{
+
+   font:16px 'NewGothR';
+  display: block;
+  
+   
+}
+
+ p#in{
+  display:inline;
+}
+
+#datas h2{
+  font:16px 'NewGothR';
+  font-weight: bold;
+  display: block;
+}
+
+#instrucoes h2{
+  font:16px 'NewGothR';
+  font-weight: bold;
+  display: block;
+}
+
+
+#datas li{
+  font:16px 'NewGothR';
+  display: block;
+
+  
+}
+
+p#paragrafo{
+  text-indent: 40px;
+
+}
+#datas ul{
+  color:#000;
+  list-style-type: circle;
+}
+
+a#in{
+  display: inline;
+}
+
+
+
