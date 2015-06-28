@@ -553,10 +553,18 @@ a:hover {
 }
 
 @media (max-width: 767px) {
-    ..logo-dimap {
-      display: none; 
+    .workshop {
+      margin-left: 0;
+      margin-top: 0;
+      font-size: 25px;
     } 
-}
-@media (max-width: 319px) {
-    .sponsors .sponsors-list .item {
-      width: 100%; } }
+    .logo-dimap {
+      visibility: hidden;
+    }
+    .title-head {
+      margin-left: 0;
+    }
+    .info {
+      margin-top: -40%;
+    }
+} 
