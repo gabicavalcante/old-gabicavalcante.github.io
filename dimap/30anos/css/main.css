@@ -273,8 +273,7 @@ a:hover {
       font-size: 4em;
       font-family: "Panton Light"; }
     .welcome .info h2 {
-      font-size: 2em;
-      margin-top: 2em; }
+      font-size: 2em;  }
     .welcome .info p {
       font-family: "Panton Light";
       margin: .5em 0 2em 0; }
@@ -545,3 +544,19 @@ a:hover {
     transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%); }
+
+.logo-dimap {
+  float: left; 
+} .title-head { 
+  margin-left: 20%;
+  font-size: 25px;
+}
+
+@media (max-width: 767px) {
+    ..logo-dimap {
+      display: none; 
+    } 
+}
+@media (max-width: 319px) {
+    .sponsors .sponsors-list .item {
+      width: 100%; } }
