@@ -8,7 +8,11 @@
   <title>30 Anos Dimap</title>
   <meta name="description" content="">
   
-  <link rel="stylesheet" href="css/main.css">    
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+
+  <link rel="stylesheet" href="css/main.css">     
+  <link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" /> 
+  <link href='http://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
 </head>
 
 
@@ -20,8 +24,7 @@
           <header id="stickyheader" class="header">
 
             <div class="logo">
-              <h1>
-                <!--<img src="images/logo.svg" alt="Logo">-->
+              <h1> 
                 <span><strong>30</strong>Anos DIMAP</span>
               </h1>
             </div> 
@@ -106,7 +109,7 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
+      <!-- ORGANIZAÇÃO -->
       <section class="about" id="organizacao">
         <div class="row">
         <h1>Comissão Organizadora</h1>
@@ -170,9 +173,7 @@
 
           <h1>INSCRIÇÕES</h1>
           <h2>EM BREVE</h2>
-
-        
-        </div>
+        </div> 
       </section>
 
       <!-- CHAMADAS -->
@@ -289,8 +290,17 @@
             </div>
 
             <div class="lecture">
-              <p class="title"><time>09:00</time> - Palestra I</p>
-              <p class="speaker">Em breve palestrantes.</p>
+              <p class="title"><time>09:00</time> - <a class="title" href="#ex7">Palestra I</a></p> 
+              <div id="ex7" class="modal">
+                <h1 style="color: black;">Conhecendo a Deep Web e o mercado brasileiro do cyber crime</h1>
+                <p style="color: black; font-family: Roboto">Palestrante: Thiago Ramos</p>
+                <hr /> <br />
+                <p style="color: black; font-weight: bold">26/08/2015 manhã (horário a confirmar)</p>
+                <br />
+                <p style="color: black;">Saiba a verdade! Como Funciona o mercado da indústria do cybercrime no Brasil, dados atualizados sobre "crime virtual" em nossa região, por que essa atividade tem se tornado uma crescente, porque devemos nos preocupar com este assunto e que medidas podem ser adotadas para minimizar os impactos causados pelo roubo de "informações".</p>
+                <br/> 
+                <p style="color: black;">Thiago Ramos: Profissional com 10 anos de experiência em tecnologia da informação sendo 6 anos aplicados a segurança. Graduado em Gestão de Tecnologia da Informação pela Universidade Estácio de Sá, no Rio de Janeiro, integra o time da Trend Micro Brasil a 4 anos participando de importantes projetos ao longo desse período, destaques para a criação de uma estratégia para detecção de ameaças avançadas na Secretaria de Administração Pública do estado da Bahia ( http://1drv.ms/1K1LPmB ) e para o projeto de segurança da informação da primeira zona de exportação do Brasil, localizada em Fortaleza ( http://1drv.ms/1K1Lq3J ). Em 2015 foi condecorado pela Trend Micro, em seu evento anual para colaboradores ocorrido em Dallas, como um dos profissionais de maior destaque no continente americano."</p>
+              </div>
             </div>
 
             <div class="lecture">
@@ -521,11 +531,76 @@
         </div>
       </section>
 
-    </div>
+    </div> 
+
+    <style type="text/css">
+      .modal a.close-modal[class*="icon-"] {
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        color: #fff;
+        line-height: 1.25;
+        text-align: center;
+        text-decoration: none;
+        text-indent: 0;
+        background: #900;
+        border: 2px solid #fff;
+        -webkit-border-radius: 26px;
+        -moz-border-radius: 26px;
+        -o-border-radius: 26px;
+        -ms-border-radius: 26px;
+        -moz-box-shadow:    1px 1px 5px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        box-shadow:         1px 1px 5px rgba(0,0,0,0.5);
+      }
+    </style>
+
 
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/showRoom.js"></script>
-    <script src="js/scrollmenu.js"></script> 
-    <script src="js/modal.js"></script>
+    <script src="js/scrollmenu.js"></script>  
+    <script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8"> hljs.initHighlightingOnLoad(); </script>
+    
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+
+        function log_modal_event(event, modal) {
+          if(typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
+        };
+
+        $(document).on($.modal.BEFORE_BLOCK, log_modal_event);
+        $(document).on($.modal.BLOCK, log_modal_event);
+        $(document).on($.modal.BEFORE_OPEN, log_modal_event);
+        $(document).on($.modal.OPEN, log_modal_event);
+        $(document).on($.modal.BEFORE_CLOSE, log_modal_event);
+        $(document).on($.modal.CLOSE, log_modal_event);
+        $(document).on($.modal.AJAX_SEND, log_modal_event);
+        $(document).on($.modal.AJAX_SUCCESS, log_modal_event);
+        $(document).on($.modal.AJAX_COMPLETE, log_modal_event);
+
+        $('#more').click(function() {
+          $(this).parent().after($(this).parent().next().clone());
+          $.modal.resize();
+          return false;
+        });
+
+        $('#manual-ajax').click(function(event) {
+          event.preventDefault();
+          $.get(this.href, function(html) {
+            $(html).appendTo('body').modal();
+          });
+        }); 
+
+        $('a[href="#ex7"]').click(function(event) {
+          event.preventDefault();
+          $(this).modal({
+            fadeDuration: 250
+          });
+        });
+      });
+    </script>
   </body>
 </html>
