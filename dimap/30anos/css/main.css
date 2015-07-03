@@ -268,7 +268,7 @@ a:hover {
         margin-top: 1em; } }
   .welcome .info {
     position: relative;
-    padding: 8em 0 4em 0; }
+    padding: 8em 0 9em 0; }
     .welcome .info h1 {
       font-size: 4em;
       font-family: "Panton Light"; }
@@ -545,26 +545,30 @@ a:hover {
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%); }
 
-.logo-dimap {
+#logo { 
+  width: 90%;
+} 
+.logo-dimap { 
   float: left; 
-} .title-head { 
-  margin-left: 20%;
-  font-size: 25px;
+  width: 40%; 
+  margin-top: -5%;  
+}
+.title-head { 
+  font-size: 19px;
+  margin-left: 10%;
 }
 
 @media (max-width: 767px) {
-    .workshop {
-      margin-left: 0;
-      margin-top: 0;
-      font-size: 25px;
+    .workshop { 
+      font-size: 16px;
     } 
     .logo-dimap {
-      visibility: hidden;
+      width: 50%;
+      margin-left: 30%;
     }
     .title-head {
       margin-left: 0;
     }
-    .info {
-      margin-top: -40%;
+    .info { 
     }
 } 
