@@ -350,7 +350,8 @@
             </div>
 
             <div class="lecture">
-              <p class="title"><time>16:00</time> - <a class="title" href="#min1">Minicurso 1</a>/<a class="title" href="#min2">Minicurso 2</a></p> 
+              <p class="title"><time>16:00</time> - <a class="title" href="#min1">Minicurso 1</a>/<a class="title" href="#min2">Minicurso 2</a></p>
+
               <div id="min1" class="modal">
                 <h1 style="color: black;">Machine-Oriented Reasoning</h1>
                 <p style="color: black; font-family: Roboto">Ministrante: Professora Claudia Nalon</p>
@@ -438,7 +439,35 @@
             </div>
 
             <div class="lecture">
-              <p class="title"><time>16:00</time> - Minicurso 3/Minicurso 4</p>  
+              <p class="title"><time>16:00</time> - <a class="title" href="#min3">Minicurso 3 </a>/<a class="title" href="#min4">Minicurso 4</a></p> 
+
+              <div id="min3" class="modal">
+                <h1 style="color: black;">Introdução a Arduino</h1>
+                <p style="color: black; font-family: Roboto">Ministrantes: Gabriel Vasiljevic e Wanderson Ricardo de Medeiros</p>
+                <hr /> <br /> 
+                <p style="color: black;">
+                - O que é o Arduino (especificações, modelos, aplicações) <br />
+                - Como funciona (componentes, IDE, circuitos, noções de eletricidade) <br />
+                - Linguagem (conceitos, funções e comandos básicos) <br />
+                - Portas digitais <br />
+                - Componentes eletrônicos (LEDs, resistores, protoboard, botões) <br />
+                - Sensores <br />
+                - Exemplos
+                </p>
+                <br/> 
+                <p style="color: black;">Gabriel Alves Vasiljevic Mendes é formado em Bacharelado em Ciência da Computação e mestrando em Sistemas e Computação pela Universidade Federal do Rio Grande do Norte. Foi bolsista do Programa de Educação Tutorial (PET) e atualmente é mestrando do PPgSC/DIMAp/UFRN, bolsista do CNPq, desenvolvendo pesquisa com ênfase em Interface Cérebro-Computador. </p>
+
+                <p style="color: black;">Wanderson Ricardo de Medeiros é técnico em Informaática pelo Instituto Federal de Educação, Ciência e Tecnologia, Campus Central (2009). Aluno do Curso Bacharelado em Ciência da Computação pela Universidade Federal do Rio Grande do Norte.</p>
+              </div> 
+
+              <div id="min4" class="modal">
+                <h1 style="color: black;">Introdução à Linguagem Python</h1>
+                <p style="color: black; font-family: Roboto">Ministrante: Hiago Mayk Gomes de Araújo Rocha</p>
+                <hr /> <br /> 
+                <p style="color: black;">
+                Python é uma poderosa linguagem usada por grandes empresas e organizações como YouTube, Dropbox, Nokia, Yahoo, Google e Nasa. Python é simples e eficiente, capaz tornar o processo de aprendizagem de programação muito mais fácil. Entre outras características, Python é orientada a objetos, interpretada, interativa e multiplataforma, tem tipos dinâmicos e sintaxe extremamente clara. Para mostrar o potencial desta linguagem, o Workshop DIMAp 30 Anos, em conjunto com o Programa de Educação Tutorial do Curso de Ciência da Computação da UFRN, oferecerá um minicurso introdutório à programação em Python. Neste minicurso, serão apresentadas informações essenciais e suficientes para iniciar o interessado na criação de programas Python, servindo de ponto de partida para quem deseja trabalhar com esta importante linguagem.
+                </p>
+              </div> 
             </div>
           </div>
 
@@ -622,6 +651,18 @@
         });
 
         $('a[href="#min2"]').click(function(event) {
+          event.preventDefault();
+          $(this).modal({
+            fadeDuration: 250
+          });
+        });
+        $('a[href="#min3"]').click(function(event) {
+          event.preventDefault();
+          $(this).modal({
+            fadeDuration: 250
+          });
+        });
+        $('a[href="#min4"]').click(function(event) {
           event.preventDefault();
           $(this).modal({
             fadeDuration: 250
