@@ -10,7 +10,30 @@
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
 
-  <link rel="stylesheet" href="css/main.css">     
+    <style type="text/css">
+      .modal a.close-modal[class*="icon-"] {
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        color: #fff;
+        line-height: 1.25;
+        text-align: center;
+        text-decoration: none;
+        text-indent: 0;
+        background: #900;
+        border: 2px solid #fff;
+        -webkit-border-radius: 26px;
+        -moz-border-radius: 26px;
+        -o-border-radius: 26px;
+        -ms-border-radius: 26px;
+        -moz-box-shadow:    1px 1px 5px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        box-shadow:         1px 1px 5px rgba(0,0,0,0.5);
+      }
+    </style>
+  <link rel="stylesheet" href="css/main.css">   
+  <link rel="stylesheet" href="css/github.css">     
   <link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" /> 
   <link href='http://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
 </head>
@@ -19,6 +42,7 @@
 <body>
     <div class="main">
 
+      <!-- HOME -->
       <section style="background-image: url('images/photo_dimap.jpg')" class="welcome">
         <div class="row">
           <header id="stickyheader" class="header">
@@ -123,7 +147,7 @@
             <div class="content">
               <h1>COORDENADORAS DE PROGRAMA</h1>
               <p>Profª Sílvia Maria Diniz Monteiro Maia</p>
-      		<p>Profª Márcia Jacyntha Nunes Rodrigues Lucena</p>
+      		    <p>Profª Márcia Jacyntha Nunes Rodrigues Lucena</p>
             </div> <br />
             <div class="content"> 
           	<h1>ARTE</h1>
@@ -141,7 +165,7 @@
           <div class="descricao2">
           	<div class="content"> 
           	<h1>COMITÊ DE PROGRAMA</h1>
-          		<p>André Maurício Cunha Campos</p>
+          	<p>André Maurício Cunha Campos</p>
       			<p>Augusto José Venâncio Neto</p>
       			<p>Benjamin Rene Callejas Bedregal</p>
       			<p>Carlos Augusto Prolo</p>
@@ -290,8 +314,8 @@
             </div>
 
             <div class="lecture">
-              <p class="title"><time>09:00</time> - <a class="title" href="#ex7">Conhecendo a Deep Web e o mercado brasileiro do cyber crime</a></p> 
-              <div id="ex7" class="modal">
+              <p class="title"><time>09:00</time> - <a class="title" href="#palestra1" rel="modal:open">Conhecendo a Deep Web e o mercado brasileiro do cyber crime</a></p> 
+              <div id="palestra1" class="modal">
                 <h1 style="color: black;">Conhecendo a Deep Web e o mercado brasileiro do cyber crime</h1>
                 <p style="color: black; font-family: Roboto">Palestrante: Thiago Ramos</p>
                 <hr /> <br />
@@ -551,34 +575,12 @@
 
     </div> 
 
-    <style type="text/css">
-      .modal a.close-modal[class*="icon-"] {
-        top: -10px;
-        right: -10px;
-        width: 20px;
-        height: 20px;
-        color: #fff;
-        line-height: 1.25;
-        text-align: center;
-        text-decoration: none;
-        text-indent: 0;
-        background: #900;
-        border: 2px solid #fff;
-        -webkit-border-radius: 26px;
-        -moz-border-radius: 26px;
-        -o-border-radius: 26px;
-        -ms-border-radius: 26px;
-        -moz-box-shadow:    1px 1px 5px rgba(0,0,0,0.5);
-        -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-        box-shadow:         1px 1px 5px rgba(0,0,0,0.5);
-      }
-    </style>
-
 
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/showRoom.js"></script>
     <script src="js/scrollmenu.js"></script>  
     <script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8"> hljs.initHighlightingOnLoad(); </script>
     
@@ -599,20 +601,13 @@
         $(document).on($.modal.AJAX_SUCCESS, log_modal_event);
         $(document).on($.modal.AJAX_COMPLETE, log_modal_event);
 
-        $('#more').click(function() {
+        $('a[href="#ex7"]').click(function() {
           $(this).parent().after($(this).parent().next().clone());
           $.modal.resize();
           return false;
         });
 
-        $('#manual-ajax').click(function(event) {
-          event.preventDefault();
-          $.get(this.href, function(html) {
-            $(html).appendTo('body').modal();
-          });
-        }); 
-
-        $('a[href="#ex7"]').click(function(event) {
+        $('a[href="#palestra1"]').click(function(event) {
           event.preventDefault();
           $(this).modal({
             fadeDuration: 250
@@ -622,7 +617,7 @@
         $('a[href="#min1"]').click(function(event) {
           event.preventDefault();
           $(this).modal({
-            fadeDuration: 250
+            fadeDuration: 250 
           });
         });
 
