@@ -33,6 +33,7 @@ pages_list:
   About: '/about/'
   Posts: '/archive/'
   Talks: '/talks/'
+  Cours: '/cours/'
 
 # Allow URL Redirects: 
 #  * https://help.github.com/articles/redirects-on-github-pages
