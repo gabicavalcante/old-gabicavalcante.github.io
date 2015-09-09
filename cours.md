@@ -29,3 +29,8 @@ Anglais </br>
 SSII </br>
 
 [Signal Son et Image pour l'Informaticien](http://cours.polytech.unice.fr/ssii/)
+
+BDR </br>
+
+[Bases de données relationnelles](http://users.polytech.unice.fr/~rueher/Cours/BD/)
+
