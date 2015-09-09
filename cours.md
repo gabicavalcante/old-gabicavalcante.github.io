@@ -42,5 +42,5 @@ SE </br>
 
 Project </br>
 
-[Embedded linux](http://i3s.unice.fr/~mosser/teaching/start)
+[TEACHING SERVICE & RESOURCES](http://i3s.unice.fr/~mosser/teaching/start)
 
