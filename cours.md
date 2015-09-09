@@ -10,7 +10,7 @@ ________________________________________________________________________________
 [Email](https://outlook.office365.com/owa/?realm=etu.unice.fr#path=/mail)
 
 OOP </br>
-[Object Oriented Programming](http://moodle.i3s.unice.fr/course/view.php?id=127) - Sander
+[Object Oriented Programming](http://moodle.i3s.unice.fr/user/view.php?id=1807&course=127) - Sander
 
 ADS1 </br>
 [Algorithms and Data Structures 1 and 2](http://users.polytech.unice.fr/~gaetano/ads/index.php) - Gaetano
@@ -33,4 +33,14 @@ SSII </br>
 BDR </br>
 
 [Bases de données relationnelles](http://users.polytech.unice.fr/~rueher/Cours/BD/)
+
+SE </br>
+
+[Embedded linux](http://users.polytech.unice.fr/~rueher/Cours/BD/CoursBD.pdf)
+
+[Imagination](http://imgtec.com/mips/warrior)
+
+Project </br>
+
+[Embedded linux](http://i3s.unice.fr/~mosser/teaching/start)
 
