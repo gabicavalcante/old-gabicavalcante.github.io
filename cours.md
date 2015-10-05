@@ -33,6 +33,7 @@ SSII </br>
 BDR </br>
 
 [Bases de données relationnelles](http://users.polytech.unice.fr/~rueher/Cours/BD/)
+[Liks](http://users.polytech.unice.fr/~rueher/Cours/BD/Exams/)
 
 SE </br>
 
@@ -42,5 +43,8 @@ SE </br>
 
 Project </br>
 
-[TEACHING SERVICE & RESOURCES](http://i3s.unice.fr/~mosser/teaching/start)
+[TEACHING SERVICE & RESOURCES](http://www.i3s.unice.fr/~mosser/teaching/15_16/ps5)
+
+
+http://users.polytech.unice.fr/~eg/PP/
 
