@@ -1,11 +1,14 @@
 ---
 layout: page
-title: Sobre mim, a vida, o universo e tudo mais
+title: Hello, It's me
 ---
 
-Sou estudante do Curso de Ciência da Computação na Universidade Federal do Rio Grande do Norte (UFRN), e conclui o técnico em informático pelo IFRN em 2013. Atualmente trabalho na base de pesquisa da universidade, desenvolvendo uma ferramente para seleção automática de ofertas com multicritérios.
+Hi, I'm undergraduate in progress in Information Technology (with emphasis on Computer Science) at Federal University of Rio Grande do Norte, UFRN, currently studying IT and Management at Polytech Nice-Sophia (BRAFITEC exchange program). 
 
-Antes de trabalhar como pesquisadora, trabalhei na equipe de TI da [Anchor Loans](http://www.anchorloans.com/). Lá, usei o framework python Pyramid, e entrei em contato pela primeira vez com banco nosql MongoDB. Já trabalhei com C#, Ruby e Java, e com SQL Server e MySQL. Posso dizer que tenho minhas experiências com C/C++, também. 
+In the Brazilian University I worked in a projeto to develop a Graphical Interface for Cloud Services Selection Based on Decision Making Mechanisms with Multiple Objectives to assist IT managers in selecting cloud services based on the properties of the services available and the requirements to be met by these services (cool?).
 
-Atualmente, sou uma das co-fundadoras da comunidade [PyLadies Brasil](http://www.brasil.pyladies.com). Está sendo uma experiência incrível ajudar a organizar a comunidade e principalmente estar participado do início dela no país, já que existem grupos em vários outros locais do mundo. Os frutos do nosso trabalho estão sendo recompensadores. Se quiser conhecer melhor o grupo, acesse a nosso [site](http://www.brasil.pyladies.com) ou nos envie um [email](brazil@pyladies.com).
+I've been developing with Python and Ruby to build Web Systems, but I already worked with C# and Java and databases SqlServer, MongoDB, MySQL and PostgreSQL. Areas of interest include Object Oriented Programming, Logical Programming, Functional Programming, Microelectronics and Embedded Systems. I am also a of the founder of PyLadies [PyLadies Brasil](http://www.brasil.pyladies.com) of Brasil and I collaborate with communities of free software like PotiLivre and RuPy.
+ 
+Now, I'm co-founder of the participated [PyLadies Brasil](http://www.brasil.pyladies.com), a international mentorship group with a focus on helping more women become active participants and leaders in the Python open-source community (this is very cool, right?).
 
+  

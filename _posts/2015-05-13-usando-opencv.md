@@ -1,15 +1,17 @@
 ---
 layout: post
-title: Usando OpenCV no Galileo
+title: Take a picture with OpenCv and Galileo
 comments: true
-permalink: "usando-opencv"
+permalink: "take-a-picture-opencv-galileo"
 author: Gabriela Cavalcante
-tags: [galileo]
+tags: [galileo, opencv]
 ---
 
-Algo que eu passei os ultimos dias tentando fazer, foi conectar uma câmera no Galileo e capturar imagens por ela. Caso você também queira fazer isso, vamos aqui começar o passo a passo. Conecte a câmera USB na saida USB do Galileo, você pode verificar se foi conectado vendo se o dispositivo aparece em ```/dev```. 
+Hello, 
 
-Caso você não tenho o OpenCV instalado (opkg list-installed | grep python-opencv), adicione os repositórios disponíveis no arquiv *.conf [¹](https://communities.intel.com/thread/56046).
+I will give you step by step tutorial how take your picture with the Intel Galileo and the OpenCv (and a camera, of course). So, conect your camera in the USB output of the Galileo (you can check if it's ok seeing the device appears in ```/dev```).
+
+If you don't have the OpenCv in your computer (opkg list-installed | grep python-opencv), then add the repositories available in the file *.conf [¹](https://communities.intel.com/thread/56046).
 
 
 ```bash
@@ -24,7 +26,7 @@ $ opkg upgrade
 $ opkg install python-opencv
 ```
 
-Você pode usar o este código[²](http://codeplasma.com/2012/12/03/getting-webcam-images-with-python-and-opencv-2-for-real-this-time/) python para tirar uma foto com a câmera conectada usando o OpenCV.
+You can use this code [²](http://codeplasma.com/2012/12/03/getting-webcam-images-with-python-and-opencv-2-for-real-this-time/) python to take the picture with the camera using the OpenCv.
 
 ```python
 import cv2
@@ -41,14 +43,14 @@ camera = cv2.VideoCapture(camera_port)
  
 # Captures a single image from the camera and returns it in PIL format
 def get_image():
- # read is the easiest way to get a full image out of a VideoCapture object.
- retval, im = camera.read()
- return im
+	# read is the easiest way to get a full image out of a VideoCapture object.
+	retval, im = camera.read()
+	return im
  
 # Ramp the camera - these frames will be discarded and are only used to allow v4l2
 # to adjust light levels, if necessary
 for i in xrange(ramp_frames):
- temp = get_image()
+	temp = get_image()
 print("Tirando a foto...")
 # Take the actual image we want to keep
 camera_capture = get_image()
@@ -61,9 +63,10 @@ cv2.imwrite(file, camera_capture)
 # capture object until your script exits
 del(camera)
 ```
-Você deve querer ver a imagem, correto? Você pode mandá-la para seu computador por ssh.
+
+Maybe, you want the image, right? So, you can send it to you using ssh. 
 
 ```bash
-$ scp <caminho da imagem>/opencv_image.png <seu user>@<ip da sua maquina>:/<pasta de destino>/
+$ scp <source path>/opencv_image.png <user>@<ip>:/<destination path>/
 
 ```
