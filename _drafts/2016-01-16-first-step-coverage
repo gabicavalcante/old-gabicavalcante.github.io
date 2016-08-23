@@ -1,0 +1,22 @@
+---
+layout: post
+title: "First step with Coverage"
+comments: true
+permalink: "2016-01-16-first-step-coverage"
+author: Gabriela Cavalcante
+tags: [python]
+---
+
+Hello,
+
+So, I don't know how this work for you, but for me, was a bit chanleger. Test my code was ever a thing a little complicate to do. I thought "why I need spend so long time testing and no coding?". So, this is the reason: <put a picture of a thing bronken>
+
+
+So, we will talk about tests, coverage, and how do this in python o/ The first thing, that helped me so much, was tool that can say how much of your code your tests test (test coverage). Now, we will talk about the [coverage.py](http://coverage.readthedocs.org/en/latest/)
+
+Coverage - is a tool for measuring code coverage of Python programs. It monitors your program, noting which parts of the code have been executed, then analyzes the source to identify code that could have been executed but was not.
+
+Coverage measurement is typically used to gauge the effectiveness of tests. It can show which parts of your code are being exercised by tests, and which are not.
+
+pip install coverage
+
