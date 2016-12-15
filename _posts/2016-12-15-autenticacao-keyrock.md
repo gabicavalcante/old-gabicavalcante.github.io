@@ -55,7 +55,7 @@ A partir dessa momento, o que você fizer nesse terminal, será refletido na maq
 
 #### Colocando o Keyrock no ar
 
-Agora que temos nossa primeira maquina funcionando, vamos utilizar o docker compose para criar e executar nossos containers. Com o Compose, podemos criar um arquivo yml e definir como será o ambiente de sua aplicação e usando um único comando criaremos e iniciaremos todos os serviços definidos. [Leia mais](http://www.mundodocker.com.br/docker-compose/) sobre o docker compose.
+Agora que temos nossa primeira maquina funcionando, vamos utilizar o docker compose para criar e executar nossos containers. Com o Compose, podemos criar um arquivo yml e definir como será o ambiente de sua aplicação e usando um único comando criaremos e iniciaremos todos os serviços definidos. [Leia mais](http://www.mundodocker.com.br/docker-compose/ target="_blank") sobre o docker compose.
 
 No diretorio do projeto crie um arquivo *docker-compose.yml*. Sugiro que esse arquivo esteja em um diretorio especifico, separado dos outros arquivos de codigo do projeto.
 
@@ -84,7 +84,7 @@ $ docker-compose up
 
 Se você leu o conteudo que indicamos anteriormente sobre o docker compose, vai entender o que esses comandos acabaram de fazer. Resumidamente, criamos a imagem baseada na imagem fiware/idm:v5.3.0 e criamos os containers de serviços que definimos no docker-compose.yml
 
-Se tudo estiver funcionando corretamente, você tem o keyrock rodando em sua maquina. Se o ip da maquina *dev* for por exemplo `192.168.99.100`, acesse [http://192.168.99.100:8000](http://192.168.99.100:8000). Bem vindo ao portal web para administradores do Keyrock!
+Se tudo estiver funcionando corretamente, você tem o keyrock rodando em sua maquina. Se o ip da maquina *dev* for por exemplo `192.168.99.100`, acesse [http://192.168.99.100:8000](http://192.168.99.100:8000 target="_blank"). Bem vindo ao portal web para administradores do Keyrock!
 
 #### Cadastrando uma aplicação no Keyrock
 
