@@ -60,6 +60,7 @@ Agora que temos nossa primeira maquina funcionando, vamos utilizar o docker comp
 No diretorio do projeto crie um arquivo *docker-compose.yml*. Sugiro que esse arquivo esteja em um diretorio especifico, separado dos outros arquivos de codigo do projeto.
 
 O conteudo do *docker-compose.yml* é mostrado a seguir:
+
 ```yml
 idm:
     restart: always
@@ -70,17 +71,20 @@ idm:
 ```
 
 Agora execute o comando no mesmo diretorio do *docker-compose.yml*:
+
 ```bash
 $ docker-compose build
 ```
+
 Depois que finalizar:
+
 ```bash
 $ docker-compose up
 ```
 
 Se você leu o conteudo que indicamos anteriormente sobre o docker compose, vai entender o que esses comandos acabaram de fazer. Resumidamente, criamos a imagem baseada na imagem fiware/idm:v5.3.0 e criamos os containers de serviços que definimos no docker-compose.yml
 
-Se tudo estiver funcionando corretamente, você tem o keyrock rodando em sua maquina. Se o ip da maquina *dev* for por exemplo 192.168.99.100, acesse http://192.168.99.100:8000. Bem vindo ao portal web para administradores do Keyrock!
+Se tudo estiver funcionando corretamente, você tem o keyrock rodando em sua maquina. Se o ip da maquina *dev* for por exemplo `192.168.99.100`, acesse [http://192.168.99.100:8000](http://192.168.99.100:8000). Bem vindo ao portal web para administradores do Keyrock!
 
 #### Cadastrando uma aplicação no Keyrock
 
