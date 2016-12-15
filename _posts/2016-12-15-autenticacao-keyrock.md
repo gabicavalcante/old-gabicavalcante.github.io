@@ -4,7 +4,7 @@ title: "Como utilizar o Keyrock na autenticação da sua aplicação"
 comments: true
 permalink: "autenticacao-keyrock"
 author: Gabriela Cavalcante
-tags: [keyrock][fiware]
+tags: [keyrock]
 ---
 
 Não seria uma novidade dizer que é altamente desejado que informações, aplicativos, ou softwares sejam acessados somente por aqueles que são autorizados. Para isso, existem vários mecanismos que lidam com diferentes aspectos de segurança da informação, tais como autenticação, políticas de segurança, entre outros.
