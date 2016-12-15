@@ -92,7 +92,7 @@ O primeiro passo para implementar o processo de autenticação na aplicação, �
 
 Ao acessar o endereço do Keyrock e realizar o login (*user*: idm e *password*: idm) é possível ver na tela inicial uma listagem de aplicações cadastradas e a opção para cadastro de uma nova aplicação. Para cadastrar uma nova aplicação, clique em "Register" no canto superior direito da janela de aplicações.
 
-IMAGE
+[Register](public/register.png)
 
 O cadastro é divido em três partes: o registro das informações da aplicação (nome, descrição, etc), a seleção de uma imagem de exibição, e o cadastro dos papéis e permissões associados a aplicação.
 
