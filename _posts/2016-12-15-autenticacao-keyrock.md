@@ -27,22 +27,30 @@ Vamos utilizar o **Python 2.7** e **Flask 0.11.1**, caso seja necessário algum 
 Para o keyrock vamos precisar criar uma docker machine. Nesse ponto, vamos supor que o docker está funcionando corretamente na sua maquina.
 
 Para testar, execute os comandos e verifique se as versões são exibidas corretamente.
+
 ```bash
 $ docker-machine --version
 $ docker-compose --version
 ```
+
 Para criar uma Docker Machine:
+
 ```bash
 $ docker-machine create -d virtualbox dev
 ```
+
 Verifica as maquinas existentes:
+
 ```bash
 docker-machine ls
 ```
+
 O resultado do ultimo comando deve exibir uma lista de maquinas, e o estado da maquina que você acabou de criar é *Running*. Você precisará apontar o Docker client para a dev machine que você acabou de criar:
+
 ```bash
 $ eval "$(docker-machine env dev)"
 ```
+
 A partir dessa momento, o que você fizer nesse terminal, será refletido na maquina *dev*. Esta nao sera a unica maquina que utilizaremos, mas a partir de agora você ja sabe como criar novas maquina e ativa-las caso seja necessario.
 
 #### Colocando o Keyrock no ar
