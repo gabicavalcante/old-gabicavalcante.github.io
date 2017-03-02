@@ -89,13 +89,17 @@ $config = array(
 
     'example-userpass' => array(
         'exampleauth:UserPass',
-        'student:studentpass' => array(
-            'uid' => array('student'),
-            'eduPersonAffiliation' => array('member', 'student'),
+        'admin:adminpass' => array(
+            'uid' => array('admin'),
+            'mail' => 'admin@email.com',
+	        'first_name' => 'User',
+	        'last_name' => 'Admin'
         ),
-        'employee:employeepass' => array(
-            'uid' => array('employee'),
-            'eduPersonAffiliation' => array('member', 'employee'),
+        'developer:developerpass' => array(
+            'uid' => array('developer'),
+            'mail' => 'developer@email.com',
+	        'first_name' => 'User',
+	        'last_name' => 'Developer'
         ),
     ),
 );
@@ -175,3 +179,5 @@ Para gerar uma private key e um certificado, execute o comando no diretorio indi
 [3] https://www.helloitsliam.com/2014/12/23/install-configure-and-test-simplesamlphp-for-authentication-testing/
 
 [4] https://www.howtoforge.com/how-to-setup-single-sign-on-with-otp-using-simplesaml-php-and-privacyidea
+
+[5] http://www.worldgoneweb.com/2013/installing-simplesamlphp-and-use-it-as-sp-and-idp-for-development-env-only/
