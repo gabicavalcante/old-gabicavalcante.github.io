@@ -1,0 +1,12 @@
+2017-03-15 12:21:38.780 5534 ERROR keystone.middleware.core [-] The admin_token_auth middleware functionality has been merged into the main auth middleware (keystone.middleware.auth.AuthContextMiddleware). `admin_token_auth` must be removed from the [pipeline:api_v3], [pipeline:admin_api], and [pipeline:public_api] sections of your paste ini file. The [filter:admin_token_auth] block will also need to be removed from your paste ini file. 
+
+
+2017-03-15 12:29:58.960 5933 DEBUG keystone.federation.utils [req-e9875dd7-221b-463f-b2c1-ea184680fef3 - - - - -] Cannot find "remote_id_attribute" in configuration group mapped. Trying default location in group federation. get_remote_id_parameter /usr/local/lib/python2.7/dist-packages/keystone/federation/utils.py:296
+
+
+
+add remote_id_attribute
+
+2017-03-15 13:18:25.156 6199 DEBUG keystone.middleware.auth [req-3cd777bf-dbb3-4b6e-9d72-c0a824445061 - - - - -] There is either no auth token in the request or the certificate issuer is not trusted. No auth context will be set. fill_context /usr/local/lib/python2.7/dist-packages/keystone/middleware/auth.py:203
+
+

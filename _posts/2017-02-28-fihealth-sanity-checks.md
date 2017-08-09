@@ -169,8 +169,41 @@ Substitua *ADMIN_TOKEN* e *KEYSTONE_DBPASS* com os seus valores:
 #### Create domain, project, user and role
 
 ```
-	$ openstack --os-interface public project create --domain default test
+	$ openstack --os-interface public project create --domain default --description "test Project" test
+	+-------------+----------------------------------+
+	| Field       | Value                            |
+	+-------------+----------------------------------+
+	| description | test Project                     |
+	| domain_id   | bea2ef5b95c54584947a43ab53f1e3ba |
+	| enabled     | True                             |
+	| id          | 2e6190a72bec48b4b35ba7100e7dee76 |
+	| is_domain   | False                            |
+	| name        | test                             |
+	| parent_id   | bea2ef5b95c54584947a43ab53f1e3ba |
+	+-------------+----------------------------------+
+
 	$ openstack --os-interface public user create --domain default test --password test --project test
+	+---------------------+----------------------------------+
+	| Field               | Value                            |
+	+---------------------+----------------------------------+
+	| default_project_id  | 2e6190a72bec48b4b35ba7100e7dee76 |
+	| domain_id           | bea2ef5b95c54584947a43ab53f1e3ba |
+	| enabled             | True                             |
+	| id                  | b14f0bf070ee4bd6a109b059599434af |
+	| name                | test                             |
+	| options             | {}                               |
+	| password_expires_at | None                             |
+	+---------------------+----------------------------------+
+
+	$ openstack role create --domain default owner
+	+-----------+----------------------------------+
+	| Field     | Value                            |
+	+-----------+----------------------------------+
+	| domain_id | bea2ef5b95c54584947a43ab53f1e3ba |
+	| id        | 5f7d333fbe5c4b1299c0987ca5060def |
+	| name      | owner                            |
+	+-----------+----------------------------------+
+
 	$ openstack --os-interface public role add --user test --project test owner
 	$ openstack --os-interface public project show test > project
 	$ openstack --os-interface public user show test > user

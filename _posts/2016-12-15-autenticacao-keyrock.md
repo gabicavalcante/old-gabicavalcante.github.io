@@ -61,7 +61,7 @@ No diretório do projeto crie um arquivo *docker-compose.yml*. Sugiro que esse a
 
 O conteudo do *docker-compose.yml* é mostrando a seguir:
 
-```yml
+```
 idm:
     restart: always
     image: fiware/idm:v5.3.0

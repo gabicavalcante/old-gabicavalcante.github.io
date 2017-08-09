@@ -38,11 +38,11 @@ Copie os templetes de configuração e matadata:
 
 Adicione um link do diretorio do simplesamlphp para o diretorio ```/var/www``` (para saber mais sobre o comando ```ln```, use o comando ```man ls``` no terminal):
 
-	$ cd /var/www
+	$ cd /var/www/html
 
 	$ sudo ln -s ~/simplesamlphp .
-
-O diretorio que precisa ser acessivel é o ```simplesamlphp/www```. Você pode expôr esse diretorio de varias formas, uma das maneiras é a que vamos usar nesse tutorial (criando um link entre o diretorio do simplesaml e o diretorio ```/var/www```), mas você também pode editar o arquivo de configuraçao do Apache e adicionar uma virtual host, como na documentaçao do [simplesamlphp](https://simplesamlphp.org/docs/stable/simplesamlphp-install#section_6).
+METE 32 BTROCOS NESA COISA
+O diretorio que precisa ser acessivel é o ```simplesamlphp/www/```. Você pode expôr esse diretorio de varias formas, uma das maneiras é a que vamos usar nesse tutorial (criando um link entre o diretorio do simplesaml e o diretorio ```/var/www```), mas você também pode editar o arquivo de configuraçao do Apache e adicionar uma virtual host, como na documentaçao do [simplesamlphp](https://simplesamlphp.org/docs/stable/simplesamlphp-install#section_6).
 
 Como criamos o link entre ```/var/www``` e ```simplesamlphp/```, vamos precisar editar o arquivo ```config/config.php```, mudando o valor de ```baseurlpath``` para '/simplesamlphp/www/'. 
 
@@ -181,3 +181,5 @@ Para gerar uma private key e um certificado, execute o comando no diretorio indi
 [4] https://www.howtoforge.com/how-to-setup-single-sign-on-with-otp-using-simplesaml-php-and-privacyidea
 
 [5] http://www.worldgoneweb.com/2013/installing-simplesamlphp-and-use-it-as-sp-and-idp-for-development-env-only/
+
+https://docs.wso2.com/display/IS510/How+To%3A+Configure+SimpleSAMLphp+as+a+Service+Provider
