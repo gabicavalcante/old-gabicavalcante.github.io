@@ -15,3 +15,37 @@ Tutorial basico com os passos para usar o NodeMCU com a Arduino IDE (escrever fi
 6. Neste ponto estamos prontos para escrever nosso próprio firmware e enviá-lo ao dispositivo, mas vamos primeiramente tentar um dos exemplos incluídos com a biblioteca: File → Examples → ESP8266WiFi → WiFiScan. Após o upload, podemos abrir a janela do Serial Monitor e observar os resultados. Verifique que 115,200 baud é a velocidade selecionada no menu do canto inferior direito do Serial Monitor.
 
 PS: Also verify that the baud rate shown in the lower right corner of the Serial Monitor matches the value in the Serial.begin() statement in the sketch.
+
+
+--- blink
+imagems...
+
+```
+/**********************************************
+  Blink
+  Connected to pin D7 (GPIO13) ESP8266 NODEMCU
+ **********************************************/
+
+#define ledPin 13
+// #define ledPin D7
+
+void setup() 
+{
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() 
+{
+  digitalWrite(ledPin, HIGH);   
+  delay(1000);              
+  digitalWrite(ledPin, LOW);    
+  delay(1000);             
+}
+```
+
+
+referencia
+
+- https://mjrobot.org/2016/10/15/do-blink-ao-blynk/
+- http://forum.arduino.cc/index.php?topic=48961.0
+- ...
