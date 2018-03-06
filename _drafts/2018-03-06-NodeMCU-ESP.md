@@ -105,7 +105,8 @@ https://learn.adafruit.com/micropython-basics-how-to-load-micropython-on-a-board
 
 You might need to change the “port” setting to something else relevant for your PC. You may also need to reduce the baudrate if you get errors when flashing (eg down to 115200). The filename of the firmware should also match the file that you have.
 
-
+acessa o terminal:
+screen /dev/tty.SLAB_USBtoUART 115200
 
 referencia
 
