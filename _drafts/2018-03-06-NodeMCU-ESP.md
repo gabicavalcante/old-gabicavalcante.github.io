@@ -44,6 +44,69 @@ void loop()
 ```
 
 
+-----
+
+
+ESP 12 – Ambientes de Desenvolvimento
+
+- Ambiente MicroPython
+  - Necessita da configuração da placa para receber o firmware do (MicroPython)[https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html#intro]
+  - Após a configuração é possível usar o script esptool.py para enviar novos scripts para a placa
+
+1. pip install esptool
+
+2. Using esptool.py you can erase the flash with the command:
+```
+➜  ~ esptool.py --port /dev/tty.SLAB_USBtoUART erase_flash
+
+esptool.py v2.3.1
+Connecting........_
+Detecting chip type... ESP8266
+Chip is ESP8266EX
+Features: WiFi
+Uploading stub...
+Running stub...
+Stub running...
+Erasing flash (this may take a while)...
+Chip erase completed successfully in 10.3s
+Hard resetting via RTS pin...
+```
+
+Para verificar a porta usada:
+
+    ls -l /dev/tty.*
+
+    ls -l /dev/cu.*
+
+
+```
+➜  embarcados esptool.py --port /dev/tty.SLAB_USBtoUART --baud 115200 write_flash --flash_size=detect 0 esp8266-20171101-v1.9.3.bin
+
+esptool.py v2.3.1
+Connecting........_
+Detecting chip type... ESP8266
+Chip is ESP8266EX
+Features: WiFi
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Auto-detected Flash size: 4MB
+Flash params set to 0x0040
+Compressed 600888 bytes to 392073...
+Wrote 600888 bytes (392073 compressed) at 0x00000000 in 34.6 seconds (effective 138.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+```
+
+https://learn.adafruit.com/micropython-basics-how-to-load-micropython-on-a-board/serial-terminal
+
+You might need to change the “port” setting to something else relevant for your PC. You may also need to reduce the baudrate if you get errors when flashing (eg down to 115200). The filename of the firmware should also match the file that you have.
+
+
+
 referencia
 
 - https://mjrobot.org/2016/10/15/do-blink-ao-blynk/
