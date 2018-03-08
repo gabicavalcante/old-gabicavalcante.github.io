@@ -108,8 +108,16 @@ You might need to change the “port” setting to something else relevant for y
 acessa o terminal:
 screen /dev/tty.SLAB_USBtoUART 115200
 
+
+
+http
+
+http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/network_tcp.html
+
+
 referencia
 
 - https://mjrobot.org/2016/10/15/do-blink-ao-blynk/
 - http://forum.arduino.cc/index.php?topic=48961.0
-- ...
+- https://learn.adafruit.com/micropython-basics-esp8266-webrepl/access-webrepl
+http://www.srccodes.com/p/article/58/setup-web-repl-esp8266-12e-connect-micro-python-prompt-repl-wifi-access-point-ap-hello-world
