@@ -121,3 +121,4 @@ referencia
 - http://forum.arduino.cc/index.php?topic=48961.0
 - https://learn.adafruit.com/micropython-basics-esp8266-webrepl/access-webrepl
 http://www.srccodes.com/p/article/58/setup-web-repl-esp8266-12e-connect-micro-python-prompt-repl-wifi-access-point-ap-hello-world
+- http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
