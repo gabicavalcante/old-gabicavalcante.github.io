@@ -123,3 +123,4 @@ referencia
 http://www.srccodes.com/p/article/58/setup-web-repl-esp8266-12e-connect-micro-python-prompt-repl-wifi-access-point-ap-hello-world
 - http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
 - https://www.filipeflop.com/blog/programar-nodemcu-com-ide-arduino/
+- http://docs.micropython.org/en/v1.9.2/esp8266/esp8266/tutorial/network_tcp.html
