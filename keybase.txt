@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/gabicavalcante
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://gabicavalcante.github.io
+  * I am gabicavalcante (https://keybase.io/gabicavalcante) on keybase.
+  * I have a public key with fingerprint 8836 E0E5 6D87 90AE 9213  D06F DC5D 5AF0 C127 3504
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200d9737fd047d289ae15a26f63c1a12ca12b2007b549446642c09f482e26945e20a",
+      "fingerprint": "8836e0e56d8790ae9213d06fdc5d5af0c1273504",
+      "host": "keybase.io",
+      "key_id": "dc5d5af0c1273504",
+      "kid": "01018d6e666280da8e0c86a63b7710040ab810566c354043fe20bd48004d6cc3716b0a",
+      "uid": "0b1f8ee023aa8df6f378fc1c19114919",
+      "username": "gabicavalcante"
+    },
+    "service": {
+      "hostname": "gabicavalcante.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1568295425,
+  "expire_in": 157680000,
+  "prev": "c9fa40e347dc134419247f82411e5f29c204bb2a9617d9a5da5a016495d5244e",
+  "seqno": 24,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMN3AnicbVJ/UBVFHH8QKpggzYQSxJA3JU0R7d7t7d29DAVHyRyYhjLAoMfe3d7j
+Brp7vvcg0BBQkiyiNwYOIzqoY0FMOKFF4Q/kSWrlWFIgxAiRpebkKKEzRDjUPcz/
+/GNnZ/f7+Xy+n8939+vwB2zzgy7mrR/3J/AhQWf9bcW2vI0vBm1iZFMtY+ybmEI6
+u9EilXq8jkJdZewMgCwAqiRwgqYCJKisKBEKecJiDXMKJJBVrCVbIEHmkYQQxohV
+gKQhkaUslhBPWUCYREbTDSd1u9y64bVkRZHDFFAeq6IgAUIlFnIqwJqq8CpPNKBA
+VuB4gCxigekJMCxzMvHQJN207qyDY9beffD3fAMoqphijFkRqESkQBExwZwsCBAA
+BIgsQsBjrHA8AojTLJuyikSrpGJF4QSI5VnfxXflZKiJlAKWI0RUNaxxgqgpUIES
+hEiCUgDooW6DvEEttJPIukJKSJFCDC9lyhMZq1aiKzQw3kCe++KSnLq3oFi+m9Dl
+Nr2mYhZZqAKv1+WxB1S8Za4A7U0qO/4XdMi6oVqTtRgl1O3RTYOxQwupePVAB8hj
+kZV4xPKJDC116W7q0AMIXsBWUgACfWiJJalIGkGActYLK5BDCEosEjSRRRBSXmMl
+hQVIllkiYSioEuFVwhMAMZKs8bMIUSYQcYNhMnYWWT6J09L06E6DeIvd1gBO+nND
+bEHzbXPnBAe+nG1+WOS9j9iesHBmSfxYxomshKp50/NOtvbW7I+/MuckDh465Iuu
+HFCOpRpl4s+Tn3hWrKnzpb79woND6xpvrV0UPh3bujX6TunI8OVljelPRL06TLyg
+YUP8ROTnqtP/y46m019GDPau+qn278r8ut3d5vDKhe+0d22t/MP+wYpJ/f2vfNyl
+jsiH0w8/99IxI3nbt8EzPa8t+Pjl8zt/qLZF9S1/ZcedkGcuOFbGTh2+sqO5tevR
+7w49HRW178eRjJzOXRvGj2X9lWfEHo+ob57+vis4fmdnT3FWvH66buJqFbz92ZG0
+aOHDEqKKnj18UqO/ZuzPy6t+y2m5s7riRG62M20quCf/4raR8/vEFHOoLS0rtHkq
+ff3NefhsQ+IBv2PA3VyU9MhR89fqZmPLwYzRa91P5tb78usmzjQcr82Iqb16IGxj
+YfuB6zdn9i7NPx2W3ZS3PfHfUZxWU3em84uEZUtajv9T1p1i+A8+FPZNXHpFL1cP
+SiNizpW7ToVv53o/vdB/Cg/EDBdF0MzHCjqovWbX3JLyaHdsefb1NH/bYt/R/pBL
+i3KiMvekJA9fTa2eyGtJzR309RW+lZnc9binX0Chhd64G6HLtzWf68lY8+75va3r
+shc8b9zeMh2XcyuGX1pVufBIRBP56Nnp3aOvJ/lKzWuxDe8tfur3s/s6MvvGXJuX
+zZQXT46vtcF2c2j14I2KsP2byzP/A61AxL0=
+=nJwi
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gabicavalcante
+
+==================================================================
